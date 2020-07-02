@@ -1,7 +1,7 @@
 # # operations
 DEPOSIT = 'DEPOSIT'
 WITHDRAW = 'WITHDRAW'
-# DISPLAY = 'DISPLAY'
+DISPLAY = 'DISPLAY'
 # CARD_PIN = "131313"
 # card_balance = 0
 #
@@ -51,4 +51,13 @@ def log_transaction(action, money, card_balance):
     if action in (DEPOSIT, WITHDRAW):
         print(action + ": $", money)
     print("Current balance:", card_balance)
+
+
+def move_money(action, money, card_balance):
+    if action == DEPOSIT:
+        return deposit_money(money, card_balance)
+    elif action == WITHDRAW:
+        return withdraw_money(money, card_balance)
+    elif action == DISPLAY:
+        return card_balance
 

@@ -61,3 +61,10 @@ def move_money(action, money, card_balance):
     elif action == DISPLAY:
         return card_balance
 
+
+def get_amount_of_money(action):
+    if action == DISPLAY:
+        return 0.0
+    money = input("Enter the sum of money to " + action + ": ")
+    return float(money)
+

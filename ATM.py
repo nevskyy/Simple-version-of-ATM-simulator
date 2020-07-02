@@ -1,6 +1,6 @@
 # # operations
-# DEPOSIT = 'DEPOSIT'
-# WITHDRAW = 'WITHDRAW'
+DEPOSIT = 'DEPOSIT'
+WITHDRAW = 'WITHDRAW'
 # DISPLAY = 'DISPLAY'
 # CARD_PIN = "131313"
 # card_balance = 0
@@ -44,4 +44,11 @@ def withdraw_money(amount, card_balance):
     """Withdraw given amount of money from the account."""
     card_balance -= amount
     # save new balance to the database
+    return card_balance
+
+
+def log_transaction(action, money, card_balance):
+    if action in (DEPOSIT, WITHDRAW):
+        print(action + ": $", money)
+    print("Current balance:", card_balance)
 
